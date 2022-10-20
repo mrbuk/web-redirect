@@ -1,0 +1,30 @@
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Messages</title>
+    <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
+</head>
+<body>
+<main class="container">
+    <form action="#" th:action="@{/message}" method="post"
+          th:object="${message}">
+        Message: <input type="text" th:field="*{text}" autofocus />
+        <input type="submit" value="Submit" />
+    </form>
+    <table>
+        <thead>
+            <tr>
+                <th scope="col">Time</th>
+                <th scope="col">Message</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="m: ${messages}">
+                <th scope="row" th:text="${#calendars.format(m.created,'HH:mm:ss')}" />
+                <td th:text="${m.text}" />
+            </tr>
+        </tbody>
+    </table>
+</main>
+</body>
+</html>
