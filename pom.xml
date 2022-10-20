@@ -40,6 +40,13 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<image>
+						<bindings>
+							<binding>${project.basedir}/custom-ca-binding:/platform/bindings/custom-ca</binding>
+						</bindings>
+					</image>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
