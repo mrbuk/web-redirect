@@ -43,10 +43,6 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
 					<image>
-						<builder>gcr.io/buildpacks/builder:v1</builder>
-						<env>
-							<GOOGLE_RUNTIME_VERSION>18</GOOGLE_RUNTIME_VERSION>
-						</env>
 						<bindings>
 							<binding>${project.basedir}/custom-ca-binding:/platform/bindings/custom-ca</binding>
 						</bindings>
